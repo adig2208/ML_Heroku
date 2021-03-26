@@ -42,7 +42,7 @@ def gen2(camera):
 def index():
     return render_template('index.html')            
 
-@app.route('/detect_face')
+@app.route('/detect_face',methods=['POST'])
 def detect_face():
     return Response(gen2(DetectFace()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
